@@ -1,26 +1,213 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-navy: #0b2a5b;
+  --color-navy-light: #123a78;
+  --color-orange: #ff7800;
+  --color-orange-dark: #e06600;
+  --color-bg-light: #f5f8fc;
+  --color-text-dark: #0b2a5b;
+  --color-text-secondary: #64748b;
+  --color-border: #e2e8f0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-navy: var(--color-navy);
+  --color-navy-light: var(--color-navy-light);
+  --color-orange: var(--color-orange);
+  --color-orange-dark: var(--color-orange-dark);
+  --color-bg-light: var(--color-bg-light);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+  --font-sans: var(--font-montserrat);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-navy);
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 6s ease-out forwards;
+}
+
+@keyframes slide-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-slide-progress {
+  animation-name: slide-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+@keyframes text-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.text-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-orange) 0%,
+    #ffc266 50%,
+    var(--color-orange) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-shimmer 3.5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  60%,
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+.animate-dash-flow {
+  animation: dash-flow 1.6s linear infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 3.5s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes truck-drive {
+  0% {
+    left: 4%;
+    top: 65%;
+  }
+  20% {
+    left: 20%;
+    top: 20%;
+  }
+  40% {
+    left: 38%;
+    top: 70%;
+  }
+  60% {
+    left: 58%;
+    top: 18%;
+  }
+  80% {
+    left: 78%;
+    top: 68%;
+  }
+  100% {
+    left: 96%;
+    top: 25%;
+  }
+}
+
+.animate-truck-drive {
+  animation: truck-drive 14s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-truck-drive {
+    animation: none;
+    left: 96% !important;
+    top: 25% !important;
+  }
+
+  .animate-marquee {
+    animation: none;
+  }
+
+  .animate-kenburns,
+  .animate-slide-progress,
+  .animate-fade-in-up,
+  .animate-dash-flow,
+  .animate-float-slow,
+  .text-shimmer {
+    animation: none;
+  }
+
+  [class*="animate-[shine"] {
+    animation: none;
+    display: none;
+  }
 }
