@@ -196,7 +196,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-10">
+            <div className="grid grid-cols-2 gap-10">
               <div>
                 <h3 className="text-navy font-bold text-sm uppercase tracking-wide mb-5">
                   Quick Links

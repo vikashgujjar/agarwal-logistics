@@ -62,7 +62,7 @@ export default function About() {
                 70K+ corporate relocations.
               </p>
 
-              <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-6">
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-6">
                 {FEATURES.map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-start gap-3">
                     <span className="flex items-center justify-center w-11 h-11 rounded-full bg-orange/10 text-orange shrink-0">

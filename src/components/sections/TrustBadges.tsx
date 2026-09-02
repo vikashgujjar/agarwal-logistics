@@ -65,7 +65,7 @@ export default function TrustBadges() {
           description="We are committed to providing reliable and quality moving services backed by certifications, ratings and years of experience."
         />
 
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 lg:gap-x-0 lg:divide-x divide-border">
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 lg:gap-x-0 lg:divide-x divide-border">
           {BADGES.map(({ icon: Icon, title, desc, tone }) => (
             <div key={title} className="text-center px-3 sm:px-5 lg:px-6">
               <span

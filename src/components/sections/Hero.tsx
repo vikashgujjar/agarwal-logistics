@@ -59,7 +59,7 @@ export default function Hero() {
                 insured, tracked and handled with care.
               </p>
 
-              <div className="animate-fade-in-up [animation-delay:300ms] flex sm:flex-wrap gap-3 mb-7 overflow-x-auto sm:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory sm:snap-none">
+              <div className="animate-fade-in-up [animation-delay:300ms] flex sm:flex-wrap gap-3 mb-7 overflow-x-auto sm:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 snap-y snap-mandatory sm:snap-none">
                 {HERO_HIGHLIGHTS.map(({ icon: Icon, title }) => (
                   <div
                     key={title}
@@ -76,7 +76,6 @@ export default function Hero() {
               </div>
 
               <div className="animate-fade-in-up [animation-delay:400ms] flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
-                <div className="flex gap-3">
                   <Button href="/#quote" variant="primary" className="flex-1 sm:flex-none justify-center">
                     <Phone size={15} strokeWidth={2.5} />
                     Get Free Quote
@@ -85,8 +84,6 @@ export default function Hero() {
                     <PlayCircle size={15} strokeWidth={2.25} />
                     How We Work
                   </Button>
-                </div>
-
                 <HeroTrustTicker />
               </div>
             </div>

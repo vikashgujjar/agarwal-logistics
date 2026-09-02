@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { X, Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { X, Phone, Mail, MapPin, ArrowRight, ChevronDown } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
 import {
@@ -10,6 +10,7 @@ import {
   YoutubeIcon,
   LinkedinIcon,
 } from "@/components/ui/SocialIcons";
+import { SERVICES_DATA } from "@/lib/services-data";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -19,6 +20,11 @@ const NAV_LINKS = [
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
+
+const SERVICE_LINKS = SERVICES_DATA.map((s) => ({
+  label: s.title,
+  href: `/services/${s.slug}`,
+}));
 
 const SOCIALS = [
   { icon: FacebookIcon, href: "#" },
@@ -33,11 +39,17 @@ type NavDrawerProps = {
 };
 
 export default function NavDrawer({ open, onClose }: NavDrawerProps) {
+  const [servicesOpen, setServicesOpen] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) setServicesOpen(false);
   }, [open]);
 
   return (
@@ -71,26 +83,74 @@ export default function NavDrawer({ open, onClose }: NavDrawerProps) {
 
         <nav className="flex-1 overflow-y-auto px-6 py-6">
           <ul className="flex flex-col">
-            {NAV_LINKS.map((link, i) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={onClose}
-                  className="group flex items-center justify-between py-4 border-b border-border text-navy font-bold text-lg hover:text-orange transition-colors"
-                >
-                  <span className="flex items-center gap-3">
-                    <span className="text-orange text-xs font-mono">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    {link.label}
-                  </span>
-                  <ArrowRight
-                    size={16}
-                    className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
-                  />
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map((link, i) => {
+              const hasSubmenu = link.label === "Services";
+              return (
+                <li key={link.href}>
+                  <div className="flex items-center border-b border-border">
+                    <a
+                      href={link.href}
+                      onClick={onClose}
+                      className="group flex-1 flex items-center justify-between py-4 text-navy font-bold text-lg hover:text-orange transition-colors"
+                    >
+                      <span className="flex items-center gap-3">
+                        <span className="text-orange text-xs font-mono">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        {link.label}
+                      </span>
+                      {!hasSubmenu && (
+                        <ArrowRight
+                          size={16}
+                          className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+                        />
+                      )}
+                    </a>
+                    {hasSubmenu && (
+                      <button
+                        type="button"
+                        onClick={() => setServicesOpen((v) => !v)}
+                        aria-expanded={servicesOpen}
+                        aria-label="Toggle services submenu"
+                        className="flex items-center justify-center w-11 h-11 shrink-0 rounded-full text-navy hover:bg-bg-light hover:text-orange transition-colors"
+                      >
+                        <ChevronDown
+                          size={18}
+                          className={`transition-transform duration-300 ${
+                            servicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    )}
+                  </div>
+
+                  {hasSubmenu && (
+                    <div
+                      className={`grid transition-all duration-300 ease-out ${
+                        servicesOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <ul className="flex flex-col py-2 pl-9 border-b border-border">
+                          {SERVICE_LINKS.map((s) => (
+                            <li key={s.href}>
+                              <a
+                                href={s.href}
+                                onClick={onClose}
+                                className="flex items-center gap-2.5 py-2.5 text-navy/70 font-semibold text-sm hover:text-orange transition-colors"
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-orange/50 shrink-0" />
+                                {s.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
