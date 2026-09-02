@@ -4,6 +4,7 @@ type LogoProps = {
   size?: "sm" | "md" | "lg";
   variant?: "light" | "dark";
   className?: string;
+  priority?: boolean;
 };
 
 const sizeClasses = {
@@ -12,18 +13,26 @@ const sizeClasses = {
   lg: "h-10 sm:h-14 md:h-16",
 };
 
+// Logo never renders taller than 64px (h-16) in CSS, so the intrinsic size
+// passed to next/image only needs to cover that at up to 3x DPR — not the
+// full 2172x724 source resolution, which forces a far larger optimized
+// image than anything actually rendered.
+const INTRINSIC_WIDTH = 240;
+const INTRINSIC_HEIGHT = 80;
+
 export default function Logo({
   size = "md",
   variant = "light",
   className = "",
+  priority = false,
 }: LogoProps) {
   const img = (
     <Image
       src="/logo.png"
       alt="Agarwal Logistics Packers"
-      width={2172}
-      height={724}
-      priority
+      width={INTRINSIC_WIDTH}
+      height={INTRINSIC_HEIGHT}
+      priority={priority}
       className={`${sizeClasses[size]} w-auto object-contain`}
     />
   );

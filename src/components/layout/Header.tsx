@@ -15,7 +15,7 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-20">
             <a href="/" aria-label="Agarwal Logistics Packers home">
-              <Logo size="md" variant="light" />
+              <Logo size="md" variant="light" priority />
             </a>
 
             <div className="flex items-center gap-3">

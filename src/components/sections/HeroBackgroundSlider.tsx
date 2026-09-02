@@ -16,6 +16,10 @@ const AUTOPLAY_MS = 5000;
 export default function HeroBackgroundSlider() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  // Only the active slide plus the one coming up next get their <Image>
+  // mounted — the other backgrounds aren't fetched until their turn is
+  // near, instead of all 4 downloading immediately on page load.
+  const [loaded, setLoaded] = useState<Set<number>>(() => new Set([0, 1 % SLIDES.length]));
 
   useEffect(() => {
     if (paused) return;
@@ -24,6 +28,17 @@ export default function HeroBackgroundSlider() {
     }, AUTOPLAY_MS);
     return () => clearInterval(id);
   }, [paused]);
+
+  useEffect(() => {
+    const nextIndex = (index + 1) % SLIDES.length;
+    setLoaded((prev) => {
+      if (prev.has(index) && prev.has(nextIndex)) return prev;
+      const next = new Set(prev);
+      next.add(index);
+      next.add(nextIndex);
+      return next;
+    });
+  }, [index]);
 
   const goTo = (i: number) => setIndex(i);
 
@@ -45,14 +60,16 @@ export default function HeroBackgroundSlider() {
             i === index ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image
-            src={src}
-            alt={label}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            className="object-cover animate-kenburns"
-          />
+          {loaded.has(i) && (
+            <Image
+              src={src}
+              alt={label}
+              fill
+              priority={i === 0}
+              sizes="100vw"
+              className="object-cover animate-kenburns"
+            />
+          )}
         </div>
       ))}
 
