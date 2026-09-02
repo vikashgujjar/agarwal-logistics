@@ -23,25 +23,28 @@ export default function StickyCTA() {
     >
       <a
         href="tel:+919988245009"
-        className="relative flex items-center gap-2 rounded-full bg-navy text-white pl-3 pr-4 sm:pl-4 sm:pr-5 py-3 shadow-xl shadow-navy/30 hover:bg-navy-light transition-colors"
+        aria-label="Call +91 99882 45009"
+        className="relative flex items-center justify-center sm:justify-start gap-0 sm:gap-2 w-12 h-12 sm:w-auto sm:h-auto rounded-full bg-navy text-white sm:pl-4 sm:pr-5 sm:py-3 shadow-xl shadow-navy/30 hover:bg-navy-light transition-colors"
       >
         <span className="absolute inset-0 rounded-full bg-navy animate-ping opacity-20" />
-        <span className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white/15 shrink-0">
-          <Phone size={14} strokeWidth={2.5} />
+        <span className="relative flex items-center justify-center w-7 h-7 rounded-full sm:bg-white/15 shrink-0">
+          <Phone size={16} strokeWidth={2.5} className="sm:hidden" />
+          <Phone size={14} strokeWidth={2.5} className="hidden sm:block" />
         </span>
-        <span className="relative text-sm font-bold whitespace-nowrap">
-          <span className="hidden sm:inline">Call +91 99882 45009</span>
-          <span className="sm:hidden">Call Now</span>
+        <span className="relative hidden sm:inline text-sm font-bold whitespace-nowrap">
+          Call +91 99882 45009
         </span>
       </a>
       <a
         href="/#quote"
-        className="flex items-center gap-2 rounded-full bg-orange text-white pl-3 pr-4 sm:pl-4 sm:pr-5 py-3 shadow-xl shadow-orange/30 hover:bg-orange-dark transition-colors"
+        aria-label="Get Free Quote"
+        className="flex items-center justify-center sm:justify-start gap-0 sm:gap-2 w-12 h-12 sm:w-auto sm:h-auto rounded-full bg-orange text-white sm:pl-4 sm:pr-5 sm:py-3 shadow-xl shadow-orange/30 hover:bg-orange-dark transition-colors"
       >
-        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-white/20 shrink-0">
-          <Zap size={14} strokeWidth={2.5} fill="currentColor" />
+        <span className="flex items-center justify-center w-7 h-7 rounded-full sm:bg-white/20 shrink-0">
+          <Zap size={16} strokeWidth={2.5} fill="currentColor" className="sm:hidden" />
+          <Zap size={14} strokeWidth={2.5} fill="currentColor" className="hidden sm:block" />
         </span>
-        <span className="text-sm font-bold whitespace-nowrap">Get Quote</span>
+        <span className="hidden sm:inline text-sm font-bold whitespace-nowrap">Get Quote</span>
       </a>
     </div>
   );
