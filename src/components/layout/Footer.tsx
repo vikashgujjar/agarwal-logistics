@@ -154,6 +154,7 @@ export default function Footer() {
             src="/hero/city.jpg"
             alt=""
             fill
+            quality={45}
             sizes="(min-width: 1024px) 60vw, 100vw"
             className="object-cover"
           />

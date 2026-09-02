@@ -77,6 +77,7 @@ export default function Stats() {
         src="/hero/road.jpg"
         alt=""
         fill
+        quality={45}
         sizes="100vw"
         className="object-cover"
       />

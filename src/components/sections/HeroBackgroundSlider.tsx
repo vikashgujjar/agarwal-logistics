@@ -66,6 +66,7 @@ export default function HeroBackgroundSlider() {
               alt={label}
               fill
               priority={i === 0}
+              quality={45}
               sizes="100vw"
               className="object-cover animate-kenburns"
             />

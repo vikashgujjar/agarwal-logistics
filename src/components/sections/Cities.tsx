@@ -54,7 +54,7 @@ export default function Cities() {
         />
 
         {/* Desktop: radial network map */}
-        <div className="hidden lg:block relative mx-auto mt-16 aspect-square w-full max-w-[600px]">
+        <div className="hidden lg:block relative mx-auto mt-16 aspect-square w-full max-w-[600px] contain-[paint]">
           <svg
             aria-hidden="true"
             viewBox="0 0 100 100"

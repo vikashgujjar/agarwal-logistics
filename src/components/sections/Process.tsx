@@ -96,7 +96,7 @@ export default function Process() {
         />
 
         {/* Desktop: animated journey map */}
-        <div className="hidden lg:block relative mt-20 h-[380px]">
+        <div className="hidden lg:block relative mt-20 h-[380px] contain-[layout_paint]">
           <svg
             aria-hidden="true"
             viewBox="0 0 100 100"

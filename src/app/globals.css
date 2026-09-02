@@ -95,6 +95,9 @@ section[id] {
 }
 
 .text-shimmer {
+  display: inline-block;
+  contain: paint;
+  will-change: background-position;
   background-image: linear-gradient(
     90deg,
     var(--color-orange) 0%,
