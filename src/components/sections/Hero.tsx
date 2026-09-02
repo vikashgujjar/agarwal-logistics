@@ -59,11 +59,11 @@ export default function Hero() {
                 insured, tracked and handled with care.
               </p>
 
-              <div className="animate-fade-in-up [animation-delay:300ms] flex flex-wrap gap-3 mb-7">
+              <div className="animate-fade-in-up [animation-delay:300ms] flex sm:flex-wrap gap-3 mb-7 overflow-x-auto sm:overflow-visible no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory sm:snap-none">
                 {HERO_HIGHLIGHTS.map(({ icon: Icon, title }) => (
                   <div
                     key={title}
-                    className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full pl-2 pr-4 py-2"
+                    className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full pl-2 pr-4 py-2 shrink-0 snap-start"
                   >
                     <span className="flex items-center justify-center w-6 h-6 rounded-full bg-orange text-white shrink-0">
                       <Icon size={12} strokeWidth={2.25} />
@@ -75,15 +75,17 @@ export default function Hero() {
                 ))}
               </div>
 
-              <div className="animate-fade-in-up [animation-delay:400ms] flex flex-wrap items-center gap-4">
-                <Button href="/#quote" variant="primary">
-                  <Phone size={15} strokeWidth={2.5} />
-                  Get Free Quote
-                </Button>
-                <Button href="/#process" variant="outline-light">
-                  <PlayCircle size={15} strokeWidth={2.25} />
-                  How We Work
-                </Button>
+              <div className="animate-fade-in-up [animation-delay:400ms] flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4">
+                <div className="flex gap-3">
+                  <Button href="/#quote" variant="primary" className="flex-1 sm:flex-none justify-center">
+                    <Phone size={15} strokeWidth={2.5} />
+                    Get Free Quote
+                  </Button>
+                  <Button href="/#process" variant="outline-light" className="flex-1 sm:flex-none justify-center">
+                    <PlayCircle size={15} strokeWidth={2.25} />
+                    How We Work
+                  </Button>
+                </div>
 
                 <HeroTrustTicker />
               </div>
@@ -223,9 +225,9 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="-mt-4 md:-mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-0 bg-white rounded-2xl shadow-xl border border-border divide-y sm:divide-y-0 sm:divide-x divide-border overflow-hidden relative z-10">
+        <div className="-mt-4 md:-mt-6 grid grid-cols-1 sm:grid-cols-4 gap-0 bg-white rounded-2xl shadow-xl border border-border divide-y sm:divide-y-0 sm:divide-x divide-border overflow-hidden relative z-10">
           {TRUST_STRIP.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="flex items-center gap-3 px-5 py-6">
+            <div key={title} className="flex items-center gap-3 px-5 py-5 sm:py-6">
               <span className="flex items-center justify-center w-11 h-11 rounded-full bg-orange/10 text-orange shrink-0">
                 <Icon size={20} strokeWidth={2} />
               </span>
