@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
 type Variant = "primary" | "secondary" | "outline" | "outline-light";
 
 const base =
-  "inline-flex items-center justify-center gap-2 font-bold text-sm rounded-[9px] px-6 py-3.5 transition-all duration-200";
+  "inline-flex items-center justify-center gap-2 font-bold text-sm rounded-[9px] px-5 py-3 sm:px-6 sm:py-3.5 transition-all duration-200";
 
 const variants: Record<Variant, string> = {
   primary:

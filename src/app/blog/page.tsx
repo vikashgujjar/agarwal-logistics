@@ -25,7 +25,7 @@ export default function BlogPage() {
       />
 
       {/* Featured post */}
-      <section className="py-14 bg-white">
+      <section className="py-10 sm:py-14 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <a
             href={`/blog/${featured.slug}`}

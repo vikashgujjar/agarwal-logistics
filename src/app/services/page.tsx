@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
@@ -52,7 +52,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Service cards */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 sm:py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What We Offer"

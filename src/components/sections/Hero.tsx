@@ -32,7 +32,7 @@ const HERO_HIGHLIGHTS = [
 
 export default function Hero() {
   return (
-    <section id="home" className="relative">
+    <section id="home" className="relative bg-bg-light">
       <div className="relative overflow-hidden bg-navy">
         <HeroBackgroundSlider />
 
@@ -47,7 +47,7 @@ export default function Hero() {
                 Safe &bull; Secure &bull; Reliable
               </span>
 
-              <h1 className="animate-fade-in-up [animation-delay:100ms] text-white font-extrabold text-3xl sm:text-4xl md:text-[42px] leading-[1.15] mb-5">
+              <h1 className="animate-fade-in-up [animation-delay:100ms] text-white font-extrabold text-2xl sm:text-4xl md:text-[42px] leading-[1.2] sm:leading-[1.15] mb-4 sm:mb-5">
                 We Make Your Move{" "}
                 <span className="text-shimmer">Simple, Safe</span> &amp;
                 Stress-Free
@@ -123,7 +123,7 @@ export default function Hero() {
                   Fill in your details, our team will call you within 30 minutes.
                 </p>
                 <form className="flex flex-col gap-3.5">
-                  <div className="grid grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div className="relative min-w-0">
                       <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-text-secondary">
                         <ShieldCheck size={14} />
@@ -145,7 +145,7 @@ export default function Hero() {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div className="relative min-w-0">
                       <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-text-secondary">
                         <Mail size={14} />
@@ -171,7 +171,7 @@ export default function Hero() {
                       </select>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-3.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     <div className="relative min-w-0">
                       <span className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-text-secondary">
                         <MapPin size={14} />

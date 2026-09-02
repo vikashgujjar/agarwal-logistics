@@ -57,7 +57,7 @@ export default function NavDrawer({ open, onClose }: NavDrawerProps) {
         aria-modal="true"
         aria-label="Site menu"
       >
-        <div className="flex items-center justify-between px-6 h-20 border-b border-border shrink-0">
+        <div className="flex items-center justify-between px-5 sm:px-6 h-16 sm:h-20 border-b border-border shrink-0">
           <Logo size="sm" variant="light" />
           <button
             type="button"

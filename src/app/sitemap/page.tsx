@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { ChevronRight, FileStack, Home, Newspaper, Package, ScrollText } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import Button from "@/components/ui/Button";
@@ -69,7 +69,7 @@ export default function SitemapPage() {
         compact
       />
 
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 gap-8">
             {SITEMAP.map((group) => (

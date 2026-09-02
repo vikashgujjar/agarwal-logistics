@@ -33,7 +33,7 @@ export default function SectionHeading({
       <h2
         className={`font-extrabold text-navy ${
           light ? "text-white" : "text-navy"
-        } text-[28px] sm:text-3xl md:text-[40px] leading-tight`}
+        } text-2xl sm:text-3xl md:text-[40px] leading-tight`}
       >
         {headingFirst ? (
           <>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import Button from "@/components/ui/Button";
@@ -53,7 +53,7 @@ export default function ContactPage() {
       />
 
       {/* Contact info cards */}
-      <section className="py-14 bg-white">
+      <section className="py-10 sm:py-14 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {CONTACT_INFO.map((item) => {
@@ -83,7 +83,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + map */}
-      <section className="py-16 md:py-20 bg-bg-light">
+      <section className="py-10 sm:py-16 md:py-20 bg-bg-light">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Form */}

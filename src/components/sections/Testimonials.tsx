@@ -1,4 +1,4 @@
-import { Star, Quote, BadgeCheck, Users2, Headset, MapPinned } from "lucide-react";
+﻿import { Star, Quote, BadgeCheck, Users2, Headset, MapPinned } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TiltCard from "@/components/ui/TiltCard";
 
@@ -40,7 +40,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative bg-bg-light py-16 md:py-24 overflow-hidden"
+      className="relative bg-bg-light py-10 sm:py-16 md:py-24 overflow-hidden"
     >
       <Quote
         aria-hidden="true"
@@ -58,7 +58,7 @@ export default function Testimonials() {
       />
       <div
         aria-hidden="true"
-        className="absolute -right-10 top-24 w-56 h-56 opacity-[0.12]"
+        className="hidden lg:block absolute -right-10 top-24 w-56 h-56 opacity-[0.12]"
         style={{
           backgroundImage:
             "radial-gradient(var(--color-navy) 1.5px, transparent 1.5px)",

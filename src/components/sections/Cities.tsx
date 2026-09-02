@@ -1,4 +1,4 @@
-import { MapPinned, Landmark, Plus } from "lucide-react";
+﻿import { MapPinned, Landmark, Plus } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const CITIES = [
@@ -39,7 +39,7 @@ const NODES = [
 
 export default function Cities() {
   return (
-    <section id="cities" className="relative bg-bg-light py-16 md:py-24 overflow-hidden">
+    <section id="cities" className="relative bg-bg-light py-10 sm:py-16 md:py-24 overflow-hidden">
       <div
         aria-hidden="true"
         className="hidden lg:block absolute -left-24 top-1/4 w-[26rem] h-[26rem] bg-gradient-to-tr from-orange/10 via-navy/8 to-transparent rounded-full blur-3xl"

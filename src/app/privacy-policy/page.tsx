@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
         compact
       />
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-start gap-4 px-6 py-5 rounded-2xl bg-navy/5 border border-navy/10 mb-12">
             <ShieldCheck size={20} className="text-navy shrink-0 mt-0.5" strokeWidth={2} />

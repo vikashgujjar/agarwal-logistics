@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import {
   Home,
   Building2,
@@ -60,14 +60,14 @@ const SMALL_SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-bg-light py-16 md:py-24 overflow-hidden">
+    <section id="services" className="relative bg-bg-light py-10 sm:py-16 md:py-24 overflow-hidden">
       <div
         aria-hidden="true"
         className="hidden lg:block absolute -right-20 -bottom-20 w-[28rem] h-[28rem] bg-gradient-to-tl from-orange/15 via-navy/10 to-transparent rounded-full blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute -left-10 top-16 w-56 h-56 opacity-[0.12]"
+        className="hidden lg:block absolute -left-10 top-16 w-56 h-56 opacity-[0.12]"
         style={{
           backgroundImage:
             "radial-gradient(var(--color-navy) 1.5px, transparent 1.5px)",

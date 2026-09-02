@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Target, Eye, HeartHandshake, ShieldCheck, UserCheck, Radar, BadgeCheck } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -106,7 +106,7 @@ export default function AboutPage() {
       <AboutSection />
 
       {/* Timeline */}
-      <section className="py-16 md:py-24 bg-navy relative overflow-hidden">
+      <section className="py-10 sm:py-16 md:py-24 bg-navy relative overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.05]"
@@ -151,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission / Vision / Values */}
-      <section className="py-16 md:py-24 bg-bg-light">
+      <section className="py-10 sm:py-16 md:py-24 bg-bg-light">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What Drives Us"
@@ -187,7 +187,7 @@ export default function AboutPage() {
 
       <Stats />
       {/* Promises */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-10 sm:py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Commitments"

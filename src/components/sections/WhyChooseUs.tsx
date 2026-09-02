@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import { CircleCheck, Star, Check, X, Trophy, Building2, Warehouse } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -17,14 +17,14 @@ const GRID_COLS = "grid-cols-[1.5fr_0.8fr_1fr]";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section className="relative bg-white py-10 sm:py-16 md:py-24 overflow-hidden">
       <div
         aria-hidden="true"
         className="hidden lg:block absolute -left-24 top-1/3 w-[30rem] h-[30rem] bg-gradient-to-tr from-navy/10 via-orange/10 to-transparent rounded-full blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute -right-10 top-10 w-64 h-64 opacity-[0.12]"
+        className="hidden lg:block absolute -right-10 top-10 w-64 h-64 opacity-[0.12]"
         style={{
           backgroundImage:
             "radial-gradient(var(--color-navy) 1.5px, transparent 1.5px)",

@@ -60,7 +60,7 @@ export default function Footer() {
     <footer className="relative">
       <div className="grid lg:grid-cols-[0.85fr_1.4fr]">
         {/* LEFT: navy brand panel */}
-        <div className="relative bg-navy text-white/80 overflow-hidden px-6 sm:px-10 lg:px-12 py-14">
+        <div className="relative bg-navy text-white/80 overflow-hidden px-5 sm:px-10 lg:px-12 py-10 sm:py-14">
           <div
             aria-hidden="true"
             className="hidden lg:block absolute -top-20 -left-16 w-72 h-72 bg-orange/10 rounded-full blur-3xl"
@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* RIGHT: light nav panel */}
-        <div className="relative bg-bg-light overflow-hidden px-6 sm:px-10 lg:px-12 py-14">
+        <div className="relative bg-bg-light overflow-hidden px-5 sm:px-10 lg:px-12 py-10 sm:py-14">
           <Image
             src="/hero/city.jpg"
             alt=""
@@ -265,7 +265,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Agarwal Logistics Packers. All
             Rights Reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             <a href="/privacy-policy" className="text-white/60 text-xs hover:text-orange transition-colors">
               Privacy Policy
             </a>

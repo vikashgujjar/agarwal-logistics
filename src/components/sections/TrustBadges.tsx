@@ -1,4 +1,4 @@
-import { Medal, Star, Award, ShieldCheck, type LucideIcon } from "lucide-react";
+﻿import { Medal, Star, Award, ShieldCheck, type LucideIcon } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 type Tone = "orange" | "navy";
@@ -37,10 +37,10 @@ const TONE_CLASSES: Record<Tone, string> = {
 
 export default function TrustBadges() {
   return (
-    <section className="relative bg-white py-16 md:py-20 overflow-hidden">
+    <section className="relative bg-white py-10 sm:py-16 md:py-20 overflow-hidden">
       <div
         aria-hidden="true"
-        className="absolute -left-4 top-6 w-40 h-40 opacity-[0.12]"
+        className="hidden lg:block absolute -left-4 top-6 w-40 h-40 opacity-[0.12]"
         style={{
           backgroundImage:
             "radial-gradient(var(--color-navy) 1.5px, transparent 1.5px)",

@@ -163,10 +163,10 @@ export default async function BlogDetailPage(props: PageProps<"/blog/[slug]">) {
         compact
       />
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1fr_300px] gap-12 items-start">
-            <article className="max-w-2xl">
+            <article className="max-w-2xl min-w-0">
               <div className="relative rounded-2xl overflow-hidden h-[280px] sm:h-[340px] mb-8">
                 <Image
                   src={post.image}
@@ -282,7 +282,7 @@ export default async function BlogDetailPage(props: PageProps<"/blog/[slug]">) {
 
       <CTA />
       {related.length > 0 && (
-        <section className="py-16 bg-bg-light">
+        <section className="py-10 sm:py-16 bg-bg-light">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-extrabold text-navy mb-8">More from Our Blog</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

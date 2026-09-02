@@ -89,7 +89,7 @@ export default async function ServiceDetailPage(
       </section>
 
       {/* Overview */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-10 items-start">
             <div className="lg:col-span-2 space-y-8">
@@ -209,7 +209,7 @@ export default async function ServiceDetailPage(
       </section>
 
       {/* Features */}
-      <section className="py-16 md:py-20 bg-bg-light">
+      <section className="py-10 sm:py-16 md:py-20 bg-bg-light">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-3">
@@ -245,7 +245,7 @@ export default async function ServiceDetailPage(
       </section>
 
       {/* Process */}
-      <section className="py-16 md:py-20 bg-navy">
+      <section className="py-10 sm:py-16 md:py-20 bg-navy">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-3">
@@ -278,7 +278,7 @@ export default async function ServiceDetailPage(
       </section>
 
       {/* FAQs */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-3">
@@ -314,7 +314,7 @@ export default async function ServiceDetailPage(
 
       <CTA />
       {/* Other services */}
-      <section className="py-16 bg-bg-light border-t border-border">
+      <section className="py-10 sm:py-16 bg-bg-light border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <h3 className="font-extrabold text-navy text-xl">Other Services</h3>

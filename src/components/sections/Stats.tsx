@@ -111,7 +111,7 @@ export default function Stats() {
                   <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-orange/15 text-orange mb-3">
                     <Icon size={16} strokeWidth={2} />
                   </span>
-                  <p className="font-extrabold text-white text-5xl sm:text-6xl md:text-7xl leading-none tracking-tight tabular-nums">
+                  <p className="font-extrabold text-white text-4xl sm:text-6xl md:text-7xl leading-none tracking-tight tabular-nums">
                     {count}
                     <span className="text-orange">{suffix}</span>
                   </p>

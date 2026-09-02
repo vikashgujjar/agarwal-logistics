@@ -1,4 +1,4 @@
-import {
+﻿import {
   PhoneCall,
   ClipboardList,
   PackageOpen,
@@ -60,14 +60,14 @@ const ROAD_D =
 
 export default function Process() {
   return (
-    <section id="process" className="relative bg-bg-light py-16 md:py-24 overflow-hidden">
+    <section id="process" className="relative bg-bg-light py-10 sm:py-16 md:py-24 overflow-hidden">
       <div
         aria-hidden="true"
         className="hidden lg:block absolute -right-24 top-10 w-[26rem] h-[26rem] bg-gradient-to-bl from-orange/12 via-navy/8 to-transparent rounded-full blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute -left-10 bottom-0 w-56 h-56 opacity-[0.12]"
+        className="hidden lg:block absolute -left-10 bottom-0 w-56 h-56 opacity-[0.12]"
         style={{
           backgroundImage:
             "radial-gradient(var(--color-navy) 1.5px, transparent 1.5px)",

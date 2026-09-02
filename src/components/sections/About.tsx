@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import {
   ShieldCheck,
   PackageCheck,
@@ -18,14 +18,14 @@ const FEATURES = [
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-bg-light py-16 md:py-24 overflow-hidden">
+    <section id="about" className="relative bg-bg-light py-10 sm:py-16 md:py-24 overflow-hidden">
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute -right-24 -top-24 w-[34rem] h-[34rem] bg-gradient-to-br from-orange/25 via-navy/10 to-transparent rounded-full blur-3xl"
+        className="hidden lg:block absolute -right-24 -bottom-24 w-[34rem] h-[34rem] bg-gradient-to-br from-orange/25 via-navy/10 to-transparent rounded-full blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="absolute -left-16 bottom-0 w-72 h-72 opacity-[0.15]"
+        className="hidden lg:block absolute -left-16 bottom-0 w-72 h-72 opacity-[0.15]"
         style={{
           backgroundImage:
             "radial-gradient(var(--color-navy) 1.5px, transparent 1.5px)",

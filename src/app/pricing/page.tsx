@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FileCheck2, Radar, ShieldCheck, Headset } from "lucide-react";
 import PageHero from "@/components/layout/PageHero";
 import FAQ from "@/components/sections/FAQ";
@@ -109,7 +109,7 @@ export default function PricingPage() {
       />
 
       {/* Home shifting */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <div className="flex items-center gap-2 mb-3">
@@ -137,10 +137,10 @@ export default function PricingPage() {
       </section>
 
       {/* Vehicle + storage */}
-      <section className="py-16 md:py-20 bg-bg-light">
+      <section className="py-10 sm:py-16 md:py-20 bg-bg-light">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10">
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2 mb-3">
                 <span className="h-[2px] w-6 bg-orange" />
                 <span className="text-orange font-bold text-xs tracking-[0.15em] uppercase">
@@ -159,7 +159,7 @@ export default function PricingPage() {
               </p>
             </div>
 
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2 mb-3">
                 <span className="h-[2px] w-6 bg-orange" />
                 <span className="text-orange font-bold text-xs tracking-[0.15em] uppercase">
@@ -192,7 +192,7 @@ export default function PricingPage() {
       </section>
 
       {/* Add-ons */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-10 sm:py-16 md:py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <div className="flex items-center gap-2 mb-3">
@@ -225,7 +225,7 @@ export default function PricingPage() {
       </section>
 
       {/* Every move includes */}
-      <section className="py-14 bg-navy">
+      <section className="py-10 sm:py-14 bg-navy">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center font-extrabold text-white text-2xl sm:text-3xl mb-10">
             Every Move Includes

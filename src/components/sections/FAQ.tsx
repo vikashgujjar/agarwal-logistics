@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Phone } from "lucide-react";
@@ -34,7 +34,7 @@ export default function FAQ() {
   const [openQuestion, setOpenQuestion] = useState<string | null>(FAQS[0].q);
 
   return (
-    <section className="relative bg-white py-16 md:py-24">
+    <section className="relative bg-white py-10 sm:py-16 md:py-24">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-16">
           <div className="lg:sticky lg:top-25 lg:self-start">
@@ -99,7 +99,7 @@ export default function FAQ() {
                       {q}
                     </span>
                     <span
-                      className={`shrink-0 text-3xl leading-none font-light transition-all duration-300 ${
+                      className={`shrink-0 text-2xl sm:text-3xl leading-none font-light transition-all duration-300 ${
                         isOpen ? "rotate-45 text-orange" : "text-navy/30"
                       }`}
                     >
