@@ -25,6 +25,13 @@ const SERVICE_LINKS = [
   { label: "Warehousing & Storage", href: "/services/warehouse-storage" },
 ];
 
+const LOCATION_LINKS = [
+  { label: "Chandigarh", href: "/locations/chandigarh" },
+  { label: "Mohali", href: "/locations/mohali" },
+  { label: "Panchkula", href: "/locations/panchkula" },
+  { label: "Zirkpur", href: "/locations/zirkpur" },
+];
+
 const CITIES = [
   "Chandigarh",
   "Delhi NCR",
@@ -252,6 +259,23 @@ export default function Footer() {
                     className="text-xs font-medium text-text-secondary bg-white border border-border rounded-full px-3.5 py-1.5 hover:bg-orange hover:text-white hover:border-orange transition-colors duration-200"
                   >
                     {city}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-border">
+              <h3 className="text-navy font-bold text-sm uppercase tracking-wide mb-4">
+                Tricity Locations
+              </h3>
+              <div className="flex flex-wrap gap-2.5">
+                {LOCATION_LINKS.map((loc) => (
+                  <a
+                    key={loc.href}
+                    href={loc.href}
+                    className="text-xs font-medium text-orange bg-orange/5 border border-orange/20 rounded-full px-3.5 py-1.5 hover:bg-orange hover:text-white hover:border-orange transition-colors duration-200"
+                  >
+                    Packers &amp; Movers in {loc.label}
                   </a>
                 ))}
               </div>
