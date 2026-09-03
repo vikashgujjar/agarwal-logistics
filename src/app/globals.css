@@ -189,11 +189,29 @@ section[id] {
   animation: truck-drive 14s ease-in-out infinite;
 }
 
+@keyframes glide-x {
+  from {
+    left: 3%;
+  }
+  to {
+    left: 97%;
+  }
+}
+
+.animate-glide-x {
+  animation: glide-x 7s ease-in-out infinite alternate;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-truck-drive {
     animation: none;
     left: 96% !important;
     top: 25% !important;
+  }
+
+  .animate-glide-x {
+    animation: none;
+    left: 50% !important;
   }
 
   .animate-marquee {

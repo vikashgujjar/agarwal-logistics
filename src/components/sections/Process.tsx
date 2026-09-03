@@ -1,4 +1,4 @@
-﻿import {
+import {
   PhoneCall,
   ClipboardList,
   PackageOpen,
@@ -7,8 +7,7 @@
   ShieldCheck,
   Package,
   MapPin,
-  Flag,
-  Home,
+  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -17,53 +16,41 @@ const STEPS: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: PhoneCall,
     title: "Inquiry",
-    desc: "You contact us and get a free quote.",
+    desc: "You contact us with your moving requirements and get a free quote.",
   },
   {
     icon: ClipboardList,
     title: "Survey & Plan",
-    desc: "We create a customised moving plan.",
+    desc: "We understand your needs and create a customized moving plan.",
   },
   {
     icon: PackageOpen,
     title: "Packing",
-    desc: "Belongings packed securely with quality materials.",
+    desc: "Our experts pack your belongings securely using high-quality materials.",
   },
   {
     icon: Truck,
     title: "Loading & Transport",
-    desc: "Goods loaded safely and transported.",
+    desc: "We load your goods safely and transport them to your new location.",
   },
   {
     icon: PackageCheck,
     title: "Unloading & Unpacking",
-    desc: "Items unpacked with care at your new place.",
+    desc: "We unload and unpack your items with care at your new home or office.",
   },
   {
     icon: ShieldCheck,
     title: "Safe Delivery",
-    desc: "Delivery completed, satisfaction guaranteed.",
+    desc: "We ensure safe delivery and complete customer satisfaction.",
   },
 ];
-
-const WAYPOINTS = [
-  { x: 4, y: 65 },
-  { x: 20, y: 20 },
-  { x: 38, y: 70 },
-  { x: 58, y: 18 },
-  { x: 78, y: 68 },
-  { x: 96, y: 25 },
-];
-
-const ROAD_D =
-  "M 4 65 Q 20 20 29 45 Q 38 70 48 44 Q 58 18 68 43 Q 78 68 87 46.5 Q 96 25 96 25";
 
 export default function Process() {
   return (
     <section id="process" className="relative bg-bg-light py-10 sm:py-16 md:py-24 overflow-hidden">
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute -right-24 top-10 w-[26rem] h-[26rem] bg-gradient-to-bl from-orange/12 via-navy/8 to-transparent rounded-full blur-3xl"
+        className="hidden lg:block absolute -right-24 top-10 w-[26rem] h-[26rem] bg-linear-to-bl from-orange/12 via-navy/8 to-transparent rounded-full blur-3xl"
       />
       <div
         aria-hidden="true"
@@ -95,125 +82,62 @@ export default function Process() {
           description="From planning to safe delivery, we follow a streamlined process to ensure a smooth and stress-free moving experience."
         />
 
-        {/* Desktop: animated journey map */}
-        <div className="hidden lg:block relative mt-20 h-[380px] contain-[layout_paint]">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            className="absolute inset-0 w-full h-full pointer-events-none drop-shadow-sm"
-          >
-            <path
-              d={ROAD_D}
-              fill="none"
-              stroke="var(--color-border)"
-              strokeWidth="2.6"
-              strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
-            />
-            <path
-              d={ROAD_D}
-              fill="none"
-              stroke="white"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
-            />
-            <path
-              d={ROAD_D}
-              fill="none"
-              stroke="var(--color-orange)"
-              strokeWidth="0.7"
-              strokeDasharray="2.5 2.5"
-              strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
-              className="animate-dash-flow"
-            />
-          </svg>
-
-          <span
-            aria-hidden="true"
-            className="absolute z-10 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-navy text-white shadow-md ring-4 ring-bg-light"
-            style={{ left: `${WAYPOINTS[0].x}%`, top: `${WAYPOINTS[0].y}%` }}
-          >
-            <Flag size={13} strokeWidth={2.25} />
-          </span>
-          <span
-            aria-hidden="true"
-            className="absolute z-10 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-navy text-white shadow-md ring-4 ring-bg-light"
-            style={{
-              left: `${WAYPOINTS[WAYPOINTS.length - 1].x}%`,
-              top: `${WAYPOINTS[WAYPOINTS.length - 1].y}%`,
-            }}
-          >
-            <Home size={13} strokeWidth={2.25} />
-          </span>
-
-          <div
-            aria-hidden="true"
-            className="animate-truck-drive absolute -translate-x-1/2 -translate-y-1/2 z-20"
-          >
-            <span className="absolute -inset-2.5 rounded-full bg-orange/25 animate-ping [animation-duration:2s]" />
-            <span className="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-orange to-orange-dark text-white shadow-xl ring-4 ring-white">
-              <Truck size={18} strokeWidth={2.25} />
-            </span>
+        <div className="relative mt-16 sm:mt-20 lg:mt-24">
+          {/* Connecting wavy dashed line — desktop only */}
+          <div className="hidden lg:block absolute -top-9 left-0 w-full h-16 pointer-events-none" aria-hidden="true">
+            <svg viewBox="0 0 1200 65" fill="none" preserveAspectRatio="none" className="w-full h-full">
+              <path
+                d="M 60 18 C 140 18, 160 42, 200 42 C 240 42, 260 18, 300 18 C 340 18, 360 42, 400 42 C 440 42, 460 18, 500 18 C 540 18, 560 42, 600 42 C 640 42, 660 18, 700 18 C 740 18, 760 42, 800 42 C 840 42, 860 18, 900 18 C 940 18, 960 42, 1000 42 C 1040 42, 1060 18, 1100 18 L 1140 18"
+                stroke="var(--color-orange)"
+                strokeWidth="2"
+                strokeDasharray="5 5"
+                opacity="0.55"
+              />
+            </svg>
           </div>
 
-          {STEPS.map(({ icon: Icon, title, desc }, i) => {
-            const wp = WAYPOINTS[i];
-            const cardAbove = wp.y >= 50;
-            return (
-              <div key={title}>
-                <div
-                  className="group absolute z-10 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-navy to-navy-light text-orange shadow-lg ring-4 ring-white transition-transform duration-300 hover:scale-110 animate-fade-in-up"
-                  style={{ left: `${wp.x}%`, top: `${wp.y}%`, animationDelay: `${i * 100}ms` }}
-                >
-                  <Icon size={20} strokeWidth={1.9} />
-                  <span className="absolute -top-1.5 -right-1.5 flex items-center justify-center w-[22px] h-[22px] rounded-full bg-gradient-to-br from-orange to-orange-dark text-white text-[9px] font-extrabold ring-2 ring-white shadow">
-                    {i + 1}
+          <div className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-4 gap-y-9 sm:gap-x-5">
+            {STEPS.map(({ icon: Icon, title, desc }, i) => {
+              const bob = i % 2 === 1 ? "lg:-translate-y-2" : "lg:translate-y-1";
+              const isLast = i === STEPS.length - 1;
+              return (
+                <div key={title} className="relative flex flex-col items-center animate-fade-in-up" style={{ animationDelay: `${i * 80}ms` }}>
+                  <span
+                    className={`relative z-10 flex items-center justify-center w-9 h-9 rounded-full bg-linear-to-br from-orange to-orange-dark text-white text-[11px] font-extrabold shadow-md ring-4 ring-bg-light mb-6 ${bob}`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                </div>
 
-                <div
-                  className={`absolute z-10 -translate-x-1/2 w-40 text-center animate-fade-in-up ${
-                    cardAbove ? "-translate-y-full" : ""
-                  }`}
-                  style={{
-                    left: `${wp.x}%`,
-                    top: `${cardAbove ? wp.y - 11 : wp.y + 11}%`,
-                    animationDelay: `${i * 100 + 60}ms`,
-                  }}
-                >
-                  <div className="bg-white rounded-xl border border-border shadow-md px-3.5 py-2.5">
-                    <p className="font-bold text-navy text-xs leading-snug">{title}</p>
-                    <p className="text-text-secondary text-[10px] leading-relaxed mt-0.5">
-                      {desc}
-                    </p>
+                  {!isLast && (
+                    <span
+                      aria-hidden="true"
+                      className={`hidden lg:flex absolute z-10 left-full top-3.5 -translate-x-1/2 -translate-y-1/2 items-center justify-center w-5 h-5 rounded-full bg-white text-orange ring-2 ring-orange/30 shadow-sm ${bob}`}
+                    >
+                      <ArrowRight size={10} strokeWidth={2.75} />
+                    </span>
+                  )}
+
+                  <div className="group relative w-full bg-white rounded-2xl border border-border shadow-md pt-9 pb-6 px-3 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 flex items-center justify-center w-14 h-14 rounded-full bg-linear-to-br from-orange to-orange-dark text-white shadow-lg ring-4 ring-bg-light transition-transform duration-300 group-hover:scale-110">
+                      <Icon size={22} strokeWidth={1.8} />
+                    </span>
+                    <h3 className="font-extrabold text-navy text-xs sm:text-sm leading-snug mt-4 mb-1.5">
+                      {title}
+                    </h3>
+                    <span
+                      aria-hidden="true"
+                      className="block mx-auto w-6 h-0.5 rounded-full bg-orange mb-2.5"
+                    />
+                    <p className="text-text-secondary text-[10px] sm:text-[11px] leading-relaxed">{desc}</p>
+
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-0 inset-x-0 h-2.5 bg-orange rounded-b-[20px] transition-[height] duration-300 [clip-path:ellipse(65%_100%_at_50%_100%)] group-hover:h-3.5"
+                    />
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Mobile & tablet: left-rail timeline */}
-        <div className="lg:hidden relative mt-14 pl-[68px]">
-          <div className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-orange/40 via-border to-transparent" />
-          <div className="flex flex-col gap-7">
-            {STEPS.map(({ icon: Icon, title, desc }, i) => (
-              <div key={title} className="relative">
-                <span className="absolute -left-[56px] top-0 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-navy to-navy-light text-orange ring-4 ring-bg-light shadow-md">
-                  <Icon size={19} strokeWidth={1.9} />
-                </span>
-                <span className="absolute -left-[42px] -top-1.5 flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-br from-orange to-orange-dark text-white text-[9px] font-extrabold ring-2 ring-bg-light shadow">
-                  {i + 1}
-                </span>
-                <div className="bg-white rounded-2xl border border-border shadow-sm p-5">
-                  <h3 className="font-bold text-navy text-sm mb-1">{title}</h3>
-                  <p className="text-text-secondary text-xs leading-relaxed">{desc}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

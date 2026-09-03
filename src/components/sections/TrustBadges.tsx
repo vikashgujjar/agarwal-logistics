@@ -1,39 +1,28 @@
-﻿import { Medal, Star, Award, ShieldCheck, type LucideIcon } from "lucide-react";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-type Tone = "orange" | "navy";
-
-const BADGES: { icon: LucideIcon; title: string; desc: string; tone: Tone }[] = [
+const BADGES = [
   {
-    icon: Medal,
+    src: "/badges/badge-iso-9001.png",
     title: "ISO 9001:2015",
     desc: "Certificate No. 2713SAFV2021, for Courier Services, Packers & Movers, Transportation and Storage of Goods.",
-    tone: "orange",
   },
   {
-    icon: Star,
+    src: "/badges/badge-5-star-rating.png",
     title: "5 Star Ratings",
     desc: "We have been rated 5 stars by our valuable clients in multiple platforms like Google, Facebook etc.",
-    tone: "orange",
   },
   {
-    icon: Award,
+    src: "/badges/badge-govt-approved.png",
     title: "Govt. Approved & Verified",
     desc: "Licensed, government registered, and verified packers and movers operating with complete legal compliance across India.",
-    tone: "navy",
   },
   {
-    icon: ShieldCheck,
+    src: "/badges/badge-safe-secure.png",
     title: "100% Safe & Secure",
     desc: "We guarantee 100% safe, reliable and damage-free packing and transportation for all your household and vehicle relocations.",
-    tone: "navy",
   },
 ];
-
-const TONE_CLASSES: Record<Tone, string> = {
-  orange: "bg-gradient-to-br from-orange to-orange-dark",
-  navy: "bg-gradient-to-br from-navy to-navy-light",
-};
 
 export default function TrustBadges() {
   return (
@@ -66,16 +55,15 @@ export default function TrustBadges() {
         />
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 lg:gap-x-0 lg:divide-x divide-border">
-          {BADGES.map(({ icon: Icon, title, desc, tone }) => (
-            <div key={title} className="text-center px-3 sm:px-5 lg:px-6">
-              <span
-                className={`relative mx-auto mb-5 flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full shadow-lg ${TONE_CLASSES[tone]}`}
-              >
-                <span className="absolute inset-1.5 rounded-full border-2 border-white/30" />
-                <Icon
-                  size={34}
-                  strokeWidth={1.5}
-                  className="relative text-white drop-shadow-sm"
+          {BADGES.map(({ src, title, desc }) => (
+            <div key={title} className="group text-center px-3 sm:px-5 lg:px-6">
+              <span className="relative mx-auto mb-4 flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3">
+                <Image
+                  src={src}
+                  alt={title}
+                  fill
+                  sizes="(min-width: 1024px) 10vw, 30vw"
+                  className="object-contain drop-shadow-lg"
                 />
               </span>
               <h3 className="font-extrabold text-navy text-sm sm:text-base leading-snug">

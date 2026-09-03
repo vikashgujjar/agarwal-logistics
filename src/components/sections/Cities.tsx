@@ -1,48 +1,23 @@
-﻿import { MapPinned, Landmark, Plus } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 const CITIES = [
-  "Chandigarh",
-  "Delhi NCR",
-  "Mumbai",
-  "Bangalore",
-  "Kolkata",
-  "Pune",
-  "Hyderabad",
-];
-
-const RADIUS = 42;
-
-const NODES = [
-  ...CITIES.map((city, i) => {
-    const angle = -Math.PI / 2 + i * ((2 * Math.PI) / (CITIES.length + 1));
-    return {
-      city,
-      more: false,
-      hq: i === 0,
-      x: 50 + RADIUS * Math.cos(angle),
-      y: 50 + RADIUS * Math.sin(angle),
-    };
-  }),
-  (() => {
-    const angle =
-      -Math.PI / 2 + CITIES.length * ((2 * Math.PI) / (CITIES.length + 1));
-    return {
-      city: "+42 More",
-      more: true,
-      hq: false,
-      x: 50 + RADIUS * Math.cos(angle),
-      y: 50 + RADIUS * Math.sin(angle),
-    };
-  })(),
+  { city: "Chandigarh", note: "Headquarters" },
+  { city: "Delhi NCR" },
+  { city: "Mumbai" },
+  { city: "Bangalore" },
+  { city: "Kolkata" },
+  { city: "Pune" },
+  { city: "Hyderabad" },
+  { city: "Chennai" },
 ];
 
 export default function Cities() {
   return (
-    <section id="cities" className="relative bg-bg-light py-10 sm:py-16 md:py-24 overflow-hidden">
+    <section id="cities" className="relative bg-bg-light py-10 sm:py-16 md:py-24">
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute -left-24 top-1/4 w-[26rem] h-[26rem] bg-gradient-to-tr from-orange/10 via-navy/8 to-transparent rounded-full blur-3xl"
+        className="hidden lg:block absolute -left-24 top-1/4 w-[26rem] h-[26rem] bg-linear-to-tr from-orange/8 via-navy/6 to-transparent rounded-full blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -53,109 +28,59 @@ export default function Cities() {
           description="With operations in 50+ cities, we're always close enough to help with your move."
         />
 
-        {/* Desktop: radial network map */}
-        <div className="hidden lg:block relative mx-auto mt-16 aspect-square w-full max-w-[600px] contain-[paint]">
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 100 100"
-            className="absolute inset-0 w-full h-full pointer-events-none"
-          >
-            {NODES.map(({ city, x, y }) => (
-              <line
-                key={city}
-                x1="50"
-                y1="50"
-                x2={x}
-                y2={y}
-                stroke="var(--color-navy)"
-                strokeOpacity="0.18"
-                strokeWidth="0.5"
-                strokeDasharray="2.2 2.2"
-                className="animate-dash-flow"
-              />
-            ))}
-          </svg>
-
-          <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center w-32 h-32 xl:w-36 xl:h-36 rounded-full bg-gradient-to-br from-navy to-navy-light shadow-2xl ring-8 ring-bg-light">
-            <span className="absolute inset-0 rounded-full bg-orange/20 animate-ping [animation-duration:3s]" />
-            <MapPinned className="relative text-orange" size={20} strokeWidth={2} />
-            <p className="relative text-white font-extrabold text-2xl xl:text-[28px] leading-none mt-1.5">
-              50+
+        <div className="mt-14 sm:mt-16 grid lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-16 items-start">
+          {/* Stat showcase */}
+          <div className="lg:sticky lg:top-28">
+            <p className="font-extrabold text-navy leading-[0.85] text-[5.5rem] sm:text-[7rem] lg:text-[8rem]">
+              50<span className="text-orange">+</span>
             </p>
-            <p className="relative text-white/70 text-[10px] font-bold uppercase tracking-wide mt-1">
-              Cities Served
+            <span className="block w-16 h-px bg-linear-to-r from-orange to-orange/0 mb-4" />
+            <p className="text-navy font-bold text-lg sm:text-xl mb-2">
+              Cities Across India
+            </p>
+            <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
+              From our headquarters in Chandigarh to metros and emerging cities
+              nationwide, our network reaches wherever you&rsquo;re headed.
             </p>
           </div>
 
-          {NODES.map(({ city, x, y, more, hq }) => (
-            <div
-              key={city}
-              className="group absolute z-10 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1.5"
-              style={{ left: `${x}%`, top: `${y}%` }}
-            >
-              <span className="relative">
-                <span
-                  className={`flex items-center justify-center w-14 h-14 xl:w-16 xl:h-16 rounded-full shadow-md transition-all duration-300 group-hover:scale-110 ${
-                    more
-                      ? "bg-orange/10 border-2 border-dashed border-orange/50 text-orange group-hover:border-orange"
-                      : hq
-                      ? "bg-orange text-white"
-                      : "bg-white border-2 border-border text-navy group-hover:border-orange group-hover:text-orange"
-                  }`}
-                >
-                  {more ? (
-                    <Plus size={20} strokeWidth={2.5} />
-                  ) : (
-                    <Landmark size={20} strokeWidth={1.75} />
-                  )}
-                </span>
-                {hq && (
-                  <span className="absolute -top-1.5 -right-1.5 flex items-center justify-center px-1.5 h-4 rounded-full bg-navy text-white text-[8px] font-extrabold ring-2 ring-bg-light">
-                    HQ
+          {/* Elegant directory list */}
+          <div className="border-t border-navy/10">
+            {CITIES.map(({ city, note }, i) => (
+              <div
+                key={city}
+                className="group relative flex items-center justify-between gap-4 py-4 sm:py-5 border-b border-navy/10 transition-colors duration-300 hover:bg-orange/3 px-1 sm:px-2 -mx-1 sm:-mx-2"
+              >
+                <div className="flex items-center gap-4 sm:gap-6 min-w-0">
+                  <span className="font-serif italic text-orange/50 text-sm sm:text-base tabular-nums shrink-0 w-6">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                )}
-              </span>
-              <span
-                className={`rounded-full px-3 py-1 shadow-sm text-[11px] font-bold whitespace-nowrap ${
-                  more ? "bg-orange/10 text-orange" : hq ? "bg-orange text-white" : "bg-white text-navy"
-                }`}
-              >
-                {city}
-              </span>
-            </div>
-          ))}
-        </div>
+                  <span className="font-extrabold text-navy text-xl sm:text-2xl truncate transition-colors duration-300 group-hover:text-orange">
+                    {city}
+                  </span>
+                </div>
 
-        {/* Mobile & tablet: city chip grid */}
-        <div className="lg:hidden mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {NODES.map(({ city, more, hq }) => (
-            <div
-              key={city}
-              className={`relative flex items-center gap-3 rounded-xl border p-4 shadow-sm ${
-                more
-                  ? "bg-orange/5 border-dashed border-orange/40"
-                  : hq
-                  ? "bg-orange/5 border-orange/30"
-                  : "bg-white border-border"
-              }`}
-            >
-              <span
-                className={`flex items-center justify-center w-10 h-10 rounded-full shrink-0 ${
-                  more || hq ? "bg-orange/10 text-orange" : "bg-navy/5 text-navy"
-                }`}
-              >
-                {more ? <Plus size={16} strokeWidth={2.5} /> : <Landmark size={16} strokeWidth={1.75} />}
+                <div className="flex items-center gap-3 sm:gap-5 shrink-0">
+                  {note && (
+                    <span className="hidden sm:inline-flex items-center text-[10px] font-extrabold uppercase tracking-widest text-orange border border-orange/30 rounded-full px-3 py-1">
+                      {note}
+                    </span>
+                  )}
+                  <ArrowUpRight
+                    size={18}
+                    strokeWidth={2}
+                    className="text-navy/20 transition-all duration-300 group-hover:text-orange group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </div>
+              </div>
+            ))}
+
+            <div className="flex items-center justify-between gap-4 py-4 sm:py-5 px-1 sm:px-2 -mx-1 sm:-mx-2">
+              <span className="text-text-secondary text-sm font-semibold italic">
+                &amp; 42 more cities across India
               </span>
-              <p className={`font-bold text-sm ${more || hq ? "text-orange" : "text-navy"}`}>
-                {city}
-              </p>
-              {hq && (
-                <span className="absolute top-2 right-2 flex items-center justify-center px-1.5 h-4 rounded-full bg-orange text-white text-[8px] font-extrabold">
-                  HQ
-                </span>
-              )}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
